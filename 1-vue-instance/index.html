@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app"> 
        <h1>{{ title }}</h1> 
        <p>{{ content }}</p>
        <a :target="aObject.target"  :href="aObject.url">{{ aObject.title }}</a>
+       <br>
+       <br>
+       <button v-on:click="changeTitle('Bu değişmiş bir title bilgisi')">Başlığı Değiştir</button>
+       <button v-on:click="changeTitle('Bu değişmiş bir title bilgisi2')">Başlığı Değiştir</button>
+       <div @mousemove="updateCoords('message', $event)" class="box" @click="changeTitle('Box üzerinden gelen')"></div>
+       <span>Kutunun Koordinatları : {{ boxCoords.x }} , {{ boxCoords.y }}</span>
     </div>
     <script src="app.js"></script>
 </body>
